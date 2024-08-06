@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribución de Niñas Madres por Estado Civil</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h2>Distribución de Niñas Madres por Estado Civil</h2>
+    <div id="bar-chart"></div>
+
+    <script>
+        // Datos del archivo Excel
+        var data = [{
+            x: ['Sin información', 'Casada', 'Conviviente', 'Soltera', 'Divorciada'],
+            y: [175237, 187, 4279, 45228, 4], // Números extraídos del archivo Excel
+            type: 'bar',
+            marker: {
+                color: 'orange' // Color de las barras anaranjado
+            }
+        }];
+
+        var layout = {
+            title: 'Distribución de Niñas Madres por Estado Civil',
+            xaxis: {
+                title: 'Estado Civil'
+            },
+            yaxis: {
+                title: 'Número de Niñas Madres',
+                range: [0, 200000] // Ajusta este valor para cambiar el rango del eje Y
+            }
+        };
+
+        Plotly.newPlot('bar-chart', data, layout);
+    </script>
+</body>
+</html>
+
+
+
+
